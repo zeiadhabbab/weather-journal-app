@@ -1,7 +1,7 @@
 /* Global Variables */
 const WEATHER_API_KEY = 'dc17e11e845722c9c950a50c6d5c3b79';
-const WEATHER_API_UNITS = 'metric';
-
+const WEATHER_API_UNITS = 'imperial';
+const apiKey = `appid=${WEATHER_API_KEY}&units=${WEATHER_API_UNITS}`;
 
 // DOM elements
 const zipInput = document.getElementById("zip");
@@ -95,9 +95,10 @@ const getDataButtonListener = async (event) => {
 
 // Function to fetch weather data from API OpenWeatherMap API
 const getWeatherData = async (zipCode) => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${WEATHER_API_KEY}&units=${WEATHER_API_UNITS}`;
+
+    const finalUrl = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&${apiKey}`;
     try {
-        const response = await fetch(url);
+        const response = await fetch(finalUrl);
         if (!response.ok) {
             errorMsg.textContent = "Failed to fetch data. Please try again.";
             throw new Error(`Failed to fetch data: ${response.status}`);
