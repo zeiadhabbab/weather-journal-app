@@ -1,35 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Weather Journal</title>
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Journal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
- <body>
-<div id = "app">
-  <div class ="holder headline">
-    Weather Journal App
-  </div>
-  <div class ="holder zip">
-    <label for="zip">Enter Zipcode here</label>
-    <input type="text" id="zip" placeholder="enter zip code here">
-  </div>
-  <div class ="holder feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
-    <button id="generate" type = "submit"> Generate </button>
-  </div>
-  <div class ="holder entry">
-    <div class = "title">Most Recent Entry</div>
-   <div id = "entryHolder">
-    <div id = "date"></div> 
-   <div id = "temp"></div>
-   <div id = "content"></div>
-  </div>
-  </div>
-  </div>
-<script src="app.js" type="text/javascript"></script>
-
+<body>
+    <div id="app">
+        <header class="headline">
+            <h1>Weather Journal App</h1>
+        </header>
+        <section class="form-section">
+            <div class="zip">
+                <label for="zip">Enter Zipcode here</label>
+                <input type="text" id="zip" placeholder="Enter zip code here ex:(10001,us)">
+            </div>
+            <div class="feel">
+                <label for="feelings">How are you feeling today?</label>
+                <textarea id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
+            </div>
+            <div>
+              <button id="generate" type="submit">Get Data</button>
+            </div>
+        </section>
+        <section class="error-section">
+          <div id="error" class="error"></div>
+        </section>
+        <section class="entry-section">
+            
+            <div class="title">Most Recent Entry</div>
+            <div id="entryHolder" class="entry-holder">
+                <div class="loader" id="loader">
+                  <i class="fa fa-circle-o-notch fa-spin"></i>
+                </div>
+                <div id="date" class="entry-date"></div>
+                <div id="temp" class="entry-temp"></div>
+                <div id="desc" class="entry-desc"></div>
+                <div id="location" class="location"></div>
+                <div id="content" class="entry-content"></div>
+            </div>
+        </section>
+       
+    </div>
+    <script src="app.js" type="text/javascript"></script>
 </body>
 </html>
