@@ -23,6 +23,11 @@ Then open the app using this url
 
 `http://localhost:8000/`
 
+## Deploying
+
+I already deployed the project to this url
+[https://evaluate-news-nlp-one.vercel.app/](https://weather-journal-app-ivory.vercel.app/)
+
 ## Get in touch with me
 
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,angular,react,jquery,figma,mysql,php,wordpress)](https://zeyadmh.com)
